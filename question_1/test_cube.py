@@ -7,13 +7,16 @@ import cubeVolume
 class TestCubeVolume(unittest.TestCase):
   
   def test_cube(self):  #test that the math to cube (x*x*x) calulates properly
-    self.assertEqual(cubeVolume.cube(3), 27)  #test that a square of side length of 3 has a volume of 27   
+    #self.assertEqual(cubeVolume.cube(3), 9)  #fail test case
+    self.assertEqual(cubeVolume.cube(3), 27)  #pass test  
   
   def test_values(self):  #test that value errors are raised if necessary
-    self.assertRaises(ValueError, cubeVolume.cube, -8)  #test that an error message appears if side length is negative
+    self.assertRaises(ValueError, cubeVolume.cube, -8)  #pass test 
+    #self.assertRaises(ValueError, cubeVolume.cube, 8)  #fail test case
   
   def test_types(self):  #test that type errors are raised if necessary
-    self.assertRaises(TypeError, cubeVolume.cube, "ty+t7")  #test that an error message appears if input is not number values
+    self.assertRaises(TypeError, cubeVolume.cube, "ty+t7")  #pass test 
+    #self.assertRaises(TypeError, cubeVolume.cube, "143")  #fail test case
   
 if __name__ == '__main__':  #run code within conditional
   unittest.main()
